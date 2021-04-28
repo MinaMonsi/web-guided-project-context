@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { fetchJoke } from "../actions/jokeActions";
 
 
@@ -7,6 +7,8 @@ import { fetchJoke } from "../actions/jokeActions";
 // Otherwise, render the joke
 const Joke = (props) => {
   const dispatch = useDispatch(); // React Redux knows which store to use, because by definition a store is the single source of truth. Only one store can be provided to a component tree
+
+  const {joke, loading} = useSelector((state) => state)
 
   useEffect(() => {
     // Fetch a joke when the component mounts (useEffect with an empty dependency array is like componentDidMount.)
