@@ -6,6 +6,7 @@ import { fetchJoke } from "../actions/jokeActions";
 // If loading, display a loading message
 // Otherwise, render the joke
 const Joke = (props) => {
+  const dispatch = useDispatch(); // React Redux knows which store to use, because by definition a store is the single source of truth. Only one store can be provided to a component tree
 
   useEffect(() => {
     // Fetch a joke when the component mounts (useEffect with an empty dependency array is like componentDidMount.)
@@ -23,7 +24,7 @@ const Joke = (props) => {
     <>
       <h3>{props.joke.setup}</h3>
       <h2>{props.joke.punchline}</h2>
-      <button onClick={() => props.fetchJoke()}>Fetch programmer joke</button>
+      <button onClick={() => fetchJoke(dispatch)}>Fetch programmer joke</button>
     </>
   )
 }
