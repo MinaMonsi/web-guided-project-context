@@ -38,6 +38,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = {fetchJoke}
-
 export default connect(mapStateToProps, mapDispatchToProps)(Joke);
