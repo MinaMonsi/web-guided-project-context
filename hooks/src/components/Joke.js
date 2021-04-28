@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { connect, useSelector } from "react-redux";
 import { fetchJoke } from "../actions/jokeActions";
 
-
 // If loading, display a loading message
 // Otherwise, render the joke
 const Joke = (props) => {
