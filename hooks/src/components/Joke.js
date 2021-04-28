@@ -12,10 +12,10 @@ const Joke = (props) => {
 
   useEffect(() => {
     // Fetch a joke when the component mounts (useEffect with an empty dependency array is like componentDidMount.)
-    props.fetchJoke();
-  }, [props.fetchJoke]);
+    fetchJoke(dispatch);
+  }, [fetchJoke]);
 
-  if (props.loading) {
+  if (loading) {
     return (
       <>
         <p>Fetching another hilarious programmer joke...</p>
@@ -24,20 +24,11 @@ const Joke = (props) => {
   }
   return (
     <>
-      <h3>{props.joke.setup}</h3>
-      <h2>{props.joke.punchline}</h2>
+      <h3>{joke.setup}</h3>
+      <h2>{joke.punchline}</h2>
       <button onClick={() => fetchJoke(dispatch)}>Fetch programmer joke</button>
     </>
   )
 }
 
-// Step 3: connect components to Redux
-
-const mapStateToProps = (state) => {
-  return {
-    joke: state.joke,
-    loading: state.loading
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Joke);
+export default Joke;
