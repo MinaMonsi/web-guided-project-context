@@ -11,7 +11,7 @@ import "./styles.css";
 import thunk from "redux-thunk";
 
 // Step 1: create the store
-const store = createStore(jokeReducer, applyMiddleware(logger, thunk));
+const store = createStore(jokeReducer, applyMiddleware(logger));
 
 function App() {
   return (

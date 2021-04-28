@@ -8,7 +8,7 @@ export const FETCHING_FAILURE = "FETCHING_FAILURE"
 
 // When looking over an actions file, the ones with the weird double-nested structure are thunk "asynchronous actions", while the other normal ones are standard (synchronous) action creators.
 
-export const fetchJoke = () => (dispatch) => {
+export const fetchJoke = (dispatch) => {
   // start a fetch (dispatch FETCHING_START)
   dispatch({ type: FETCHING_START });
   axios.get("https://official-joke-api.appspot.com/jokes/programming/random")
