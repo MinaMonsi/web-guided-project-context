@@ -14,13 +14,13 @@ export default function FamilyTree(props) {
       <h2>Parents</h2>
 
       {/* Pass data down as a prop */}
-      <Parents family={family} />
+      <Parents />
 
       <div className="spacer" />
       <h2>Siblings</h2>
 
       {/* Siblings will consume data from Context using render props */}
-      <Siblings family={family} />
+      <Siblings />
     </section>
   );
 }
