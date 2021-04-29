@@ -30,7 +30,7 @@ export default function App() {
               key={family.familyName}
               onClick={() => setActiveFamily(family)}
             >
-              {d.familyName}
+              {family.familyName}
             </button>
           ))}
         </section>
