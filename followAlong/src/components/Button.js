@@ -5,12 +5,18 @@ import { FamilyContext } from "../contexts";
 
 // When consuming a context with useContext, remember to specify which context you want to consume! (There won't always be just one)
 
-const Siblings = (props) => {
+const Button = (props) => {
     const family = useContext(FamilyContext);
     return (
         <>
+            <button
+                className={`family-button ${family.familyName ===
+                    activeFamily.familyName && "active"}`}
+                key={family.familyName}
+                onClick={() => setActiveFamily(family)}
+            >
         </>
     );
 };
 
-export default Siblings;
+export default Button;
