@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <FamilyContext.Provider value={activeFamily}>
+      <FamilyContext.Provider value={{activeFamily: {value: activeFamily, setValue: setActiveFamily} }}>
         <section className="header">
           <h1>Family Trees</h1>
           {families.map(family => (
