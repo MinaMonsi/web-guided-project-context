@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 
 import { data } from "./data";
 
@@ -8,6 +8,8 @@ import "./styles.scss";
 export default function App() {
   const [families] = useState(data);
   const [activeFamily, setActiveFamily] = useState(families[0]);
+
+  export const FamilyContext = createContext();
 
   return (
     <div className="App">
