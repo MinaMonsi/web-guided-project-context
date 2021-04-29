@@ -16,8 +16,6 @@ export default function App() {
   const [families] = useState(data);
   const [activeFamily, setActiveFamily] = useState(families[0]);
 
-
-  console.log(FamilyContext);
   return (
     <div className="App">
       <FamilyContext.Provider value={activeFamily}>
