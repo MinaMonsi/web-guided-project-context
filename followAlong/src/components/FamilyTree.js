@@ -7,7 +7,7 @@ import Siblings from "./Siblings";
 // Step 3: Consume the context
 
 export default function FamilyTree(props) {
-  const family = useContext(FamilyContext);
+  const [family] = useContext(FamilyContext).activeFamily;
   return (
     <section className="FamilyTree">
       <h1>{family.familyName}</h1>
