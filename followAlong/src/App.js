@@ -15,20 +15,22 @@ export default function App() {
 
   return (
     <div className="App">
-      <section className="header">
-        <h1>Family Trees</h1>
-        {families.map(family => (
-          <button
-            className={`family-button ${family.familyName ===
-              activeFamily.familyName && "active"}`}
-            key={family.familyName}
-            onClick={() => setActiveFamily(family)}
-          >
-            {d.familyName}
-          </button>
-        ))}
-      </section>
-      {activeFamily && <FamilyTree family={activeFamily} />}
+      <FamilyContext.Provider>
+        <section className="header">
+          <h1>Family Trees</h1>
+          {families.map(family => (
+            <button
+              className={`family-button ${family.familyName ===
+                activeFamily.familyName && "active"}`}
+              key={family.familyName}
+              onClick={() => setActiveFamily(family)}
+            >
+              {d.familyName}
+            </button>
+          ))}
+        </section>
+        {activeFamily && <FamilyTree family={activeFamily} />}
+      </FamilyContext.Provider>
     </div>
   );
 }
