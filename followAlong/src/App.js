@@ -4,6 +4,9 @@ import { data } from "./data";
 
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
+import { FamilyContext } from "./contexts";
+
+// Step 2: Provide the Context (by wrapping Context.Provider around the components that will need to consume the Context)
 
 export default function App() {
   const [families] = useState(data);
