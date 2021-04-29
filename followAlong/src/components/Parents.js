@@ -11,7 +11,7 @@ class Parents extends React.Component {
           {family => (
             <>
               {
-                this.prosps.family.parents.map(p => (
+                family.parents.map(p => (
                   <div className="person" key={p.name}>
                     <img width="150" src={p.img} alt={p.name} />
                     <strong>{p.name}</strong>
