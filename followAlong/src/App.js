@@ -5,6 +5,7 @@ import { data } from "./data";
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
 import { FamilyContext } from "./contexts";
+import Button from "./components/Button";
 
 // Step 2: Provide the Context (by wrapping Context.Provider around the components that will need to consume the Context)
 
@@ -18,14 +19,7 @@ export default function App() {
         <section className="header">
           <h1>Family Trees</h1>
           {families.map(family => (
-            <button
-              className={`family-button ${family.familyName ===
-                activeFamily.familyName && "active"}`}
-              key={family.familyName}
-              onClick={() => setActiveFamily(family)}
-            >
-              {family.familyName}
-            </button>
+            <Button family={family} />
           ))}
         </section>
         {activeFamily && <FamilyTree />}
