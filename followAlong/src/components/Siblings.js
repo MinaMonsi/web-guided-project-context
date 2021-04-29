@@ -6,7 +6,7 @@ import { FamilyContext } from "../contexts";
 // When consuming a context with useContext, remember to specify which context you want to consume! (There won't always be just one)
 
 const Siblings = (props) => {
-  const family = useContext(FamilyContext);
+  const [family] = useContext(FamilyContext).activeFamily;
   return (
     <section className="parents">
       {family.siblings.map((p) => (
