@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import Parents from "./Parents";
 import Siblings from "./Siblings";
 
+// Step 3: Consume the context
+
 export default function FamilyTree(props) {
   return (
     <section className="FamilyTree">
