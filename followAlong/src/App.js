@@ -9,7 +9,7 @@ export default function App() {
   const [families] = useState(data);
   const [activeFamily, setActiveFamily] = useState(families[0]);
 
-  export const FamilyContext = createContext();
+  export const FamilyContext = createContext(); // initialize later, when providing the context to a component tree
 
   return (
     <div className="App">
