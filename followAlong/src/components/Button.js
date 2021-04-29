@@ -13,9 +13,9 @@ const Button = (props) => {
                 className={`family-button ${props.family.familyName ===
                     activeFamily.familyName && "active"}`}
                 key={family.familyName}
-                onClick={() => setActiveFamily(family)}
+                onClick={() => props.setActiveFamily(props.family)}
             >
-                {family.familyName}
+                {props.family.familyName}
             </button>
         </>
     );
